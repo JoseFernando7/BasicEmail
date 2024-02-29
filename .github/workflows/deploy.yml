@@ -50,9 +50,9 @@ jobs:
       run: |
         cd frontend/basicemail_front
         npm ci
-    - name: Build project
-      run: |
-        cd frontend/basicemail_front
-        npm run build --if-present
-    # - run: npm test..
+    # - name: Build project
+    #  run: |
+    #    cd frontend/basicemail_front
+    #    npm run build --if-present
+    # - run: npm test
   
