@@ -55,4 +55,21 @@ jobs:
     #    cd frontend/basicemail_front
     #    npm run build --if-present
     # - run: npm test
+
+  production-branch-job:
+    needs: [django-build, node-build]
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set Git configuration
+      run: |
+        git config user.name "${{ github.actor }}"
+
+    - name: Create or update production branch
+      run: |
+        git checkout -B production
+        git push origin production
   
